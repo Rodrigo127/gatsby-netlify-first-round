@@ -5,10 +5,10 @@ import HeaderGitBlog from "./header-git-blog"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./layout-git-blog.css"
 
-const LayoutGitBlog = ({ children }) => {
+const LayoutGitBlog = ({ children, brand }) => {
     return (<>
         <Container fluid="true">
-            <HeaderGitBlog />
+            <HeaderGitBlog brand={brand} />
             <Row>
                 <Col>
                     {children}

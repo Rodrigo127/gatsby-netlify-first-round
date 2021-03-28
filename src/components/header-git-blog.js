@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 
-const HeaderGitBlog = (props) => {
+const HeaderGitBlog = ({brand}) => {
     return (<>
         <Navbar expand="xl" variant="light" bg="dark" >
-            <Navbar.Brand href="#">Rodrigo 127</Navbar.Brand>
+            <Navbar.Brand href="#">{brand}</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">

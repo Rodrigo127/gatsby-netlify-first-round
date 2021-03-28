@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { graphql } from 'gatsby';
 
 const IndexPage = ({data}) => (
-  <LayoutGitBlog>
+  <LayoutGitBlog brand={data.q2.user.login}>
     <SEO title="Home Page" />
   </LayoutGitBlog>
 )
@@ -17,15 +17,14 @@ export const pageQuery = graphql`
 { 
   q2: github {
     user(login: "Rodrigo127") {
-      repositories(first: 5) {
-        edges {
-          node{
-            name
-            id
-          }
-          cursor
-        }
-      }
+      name
+      url
+      avatarUrl(size: 10)
+      bio
+      company
+      twitterUsername
+      websiteUrl
+      login
     }
   }
 }
