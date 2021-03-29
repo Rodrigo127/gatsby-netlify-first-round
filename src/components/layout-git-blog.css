@@ -5,3 +5,19 @@ body{
 .navbar-brand, .nav-link {
     color: white !important;
 }
+
+div.image-column{
+    text-align: center;
+}
+
+div.image-column img{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+div.profile-information{
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+}

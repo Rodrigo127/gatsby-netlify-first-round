@@ -1,6 +1,7 @@
 import * as React from "react"
 
 import LayoutGitBlog from "../components/layout-git-blog"
+import CardProfile from "../components/card-profile"
 import SEO from "../components/seo"
 
 import { graphql } from 'gatsby';
@@ -8,6 +9,7 @@ import { graphql } from 'gatsby';
 const IndexPage = ({data}) => (
   <LayoutGitBlog brand={data.q2.user.login}>
     <SEO title="Home Page" />
+    <CardProfile imageUrl={data.q2.user.avatarUrl} />
   </LayoutGitBlog>
 )
 
@@ -19,7 +21,7 @@ export const pageQuery = graphql`
     user(login: "Rodrigo127") {
       name
       url
-      avatarUrl(size: 10)
+      avatarUrl(size: 180)
       bio
       company
       twitterUsername
