@@ -1,16 +1,27 @@
 import * as React from "react"
+import { Link } from 'gatsby'
 import { Row, Col, Image } from "react-bootstrap"
 
-const CardProfile = ({imageUrl}) => (
+const CardProfile = ({ profile }) => (
     <>
         <Row>
-            <Col sm={12} md={3} className="image-column">
-                <Image src={imageUrl} roundedCircle />
+            <Col sm={11} md={3} className="image-column">
+                <Image src={profile.avatarUrl} roundedCircle />
             </Col>
-            <Col sm={12} md={9} className="profile-information">
-                <p>Name: </p>
-                <p>Nickname</p>
-                <p>Description</p>
+            <Col sm={11} md={6} className="profile-information">
+                <p>
+                    <span>Name: {profile.name}</span><br />
+                    <span>{profile.login}</span><br />
+                </p>
+                <p>
+                    <span>{profile.bio}</span><br />
+                </p>
+                <p>
+                    <span>{profile.company}</span><br />
+                    <span>{profile.location}</span><br />
+                    <span><Link to={profile.websiteUrl}>Linkedin</Link></span><br />
+                    <span><Link to={`https://twitter.com/${profile.twitterUsername}`}>@{profile.twitterUsername}</Link></span><br />
+                </p>
             </Col>
         </Row>
     </>

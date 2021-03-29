@@ -9,7 +9,7 @@ import { graphql } from 'gatsby';
 const IndexPage = ({data}) => (
   <LayoutGitBlog brand={data.q2.user.login}>
     <SEO title="Home Page" />
-    <CardProfile imageUrl={data.q2.user.avatarUrl} />
+    <CardProfile profile={data.q2.user} />
   </LayoutGitBlog>
 )
 
@@ -27,6 +27,7 @@ export const pageQuery = graphql`
       twitterUsername
       websiteUrl
       login
+      location
     }
   }
 }

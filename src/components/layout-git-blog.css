@@ -7,7 +7,7 @@ body{
 }
 
 div.image-column{
-    text-align: center;
+    text-align: right;
 }
 
 div.image-column img{
@@ -19,5 +19,5 @@ div.image-column img{
 div.profile-information{
     text-align: left;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 40px;
 }
