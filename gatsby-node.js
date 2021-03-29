@@ -25,4 +25,11 @@ exports.createPages = ({ actions, graphql }) => {
             branch: `${process.env.GITHUB_REPOSITORY_EXAMPLE_BRANCH}`
         }
     })
+    actions.createPage({
+        path: `/following`,
+        component: require.resolve("./src/templates/following.js"),
+        context: {
+            login: `${process.env.GITHUB_LOGIN}`
+        }
+    })
 }
