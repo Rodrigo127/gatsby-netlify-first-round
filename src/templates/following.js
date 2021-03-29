@@ -17,9 +17,9 @@ const FollowingPage = ({data}) => (
 export default FollowingPage
 
 export const pageQuery = graphql`
-{
+query($login: String!){
   github {
-   user(login: "Rodrigo127") {
+   user(login: $login) {
       name
       login
       following(first: 100){
