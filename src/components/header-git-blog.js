@@ -10,7 +10,7 @@ const HeaderGitBlog = ({brand}) => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Profile</Nav.Link>
                     <Nav.Link href="/commits">Commits</Nav.Link>
-                    <Nav.Link href="/route3">Route 3</Nav.Link>
+                    <Nav.Link href="/following">Who I follow</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
