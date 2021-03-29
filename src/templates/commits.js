@@ -6,24 +6,24 @@ import SEO from "../components/seo"
 
 import { graphql } from 'gatsby';
 
-const SecondPage = ({data}) => (
+const CommitsPage = ({data}) => (
   <LayoutGitBlog brand={data.q1.repository.owner.login}>
     <SEO title="Commits Page" />
     <CommitsSection repoName={data.q1.repository.name} commits={data.q1.repository.ref.target.history} />
   </LayoutGitBlog>
 )
 
-export default SecondPage
+export default CommitsPage
 
 export const pageQuery = graphql`
-{
+query($login: String!, $repository: String!, $branch: String!){
     q1: github {
-      repository(name: "gatsby-netlify-first-round", owner: "Rodrigo127") {
+      repository(name: $repository, owner: $login) {
         name
         owner {
           login
         }
-        ref(qualifiedName: "master") {
+        ref(qualifiedName: $branch) {
           target {
             ... on GitHub_Commit {
               history(first:100){
