@@ -14,7 +14,7 @@ const CardProfile = ({ profile }) => (
                 <div>
                     <p>
                         <span>Name: {profile.name}</span><br />
-                        <span>{profile.login}</span><br />
+                        <span><Link to={profile.url} target="_blank">{profile.login}</Link></span><br />
                     </p>
                     <p>
                         <span>{profile.bio}</span><br />

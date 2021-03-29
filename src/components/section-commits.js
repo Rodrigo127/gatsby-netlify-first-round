@@ -1,4 +1,5 @@
 import * as React from "react"
+import {Link} from "gatsby"
 import { Row, Col, ListGroup } from "react-bootstrap"
 
 const CommitsSection = ({ repoName, commits }) => (
@@ -8,7 +9,13 @@ const CommitsSection = ({ repoName, commits }) => (
                 <h1>Commits of {repoName}</h1>
                 <ListGroup>
                     {commits.nodes.map((commit)=>{
-                        return (<ListGroup.Item>{commit.oid}<br />{commit.messageHeadline}</ListGroup.Item>)
+                        return (
+                        <ListGroup.Item>
+                            <Link to={commit.url} target="_blank">
+                                {commit.oid}<br />
+                            </Link>
+                            {commit.messageHeadline}
+                        </ListGroup.Item>)
                     })}                    
                 </ListGroup>
             </Col>

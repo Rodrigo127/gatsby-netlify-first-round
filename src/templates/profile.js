@@ -33,6 +33,7 @@ query($login: String!){
       repositories(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
         nodes {
           name
+          url
         }
       }
     }

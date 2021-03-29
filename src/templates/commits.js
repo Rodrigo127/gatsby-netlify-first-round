@@ -32,6 +32,7 @@ query($login: String!, $repository: String!, $branch: String!){
                     messageHeadline
                     oid
                     message
+                    url
                     author {
                       name
                       email
