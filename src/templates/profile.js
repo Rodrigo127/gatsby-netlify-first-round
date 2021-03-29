@@ -18,9 +18,9 @@ const IndexPage = ({data}) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-{ 
+query($login: String!){ 
   q2: github {
-    user(login: "Rodrigo127") {
+    user(login: $login) {
       name
       url
       avatarUrl(size: 300)
