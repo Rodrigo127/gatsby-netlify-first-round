@@ -1,4 +1,5 @@
 import * as React from "react"
+import {Link} from "gatsby"
 import { Row, Col, ListGroup } from "react-bootstrap"
 
 const RepositoriesSection = ({ repositories }) => (
@@ -8,7 +9,13 @@ const RepositoriesSection = ({ repositories }) => (
                 <h1>Repositories</h1>
                 <ListGroup>
                     {repositories.nodes.map((repo)=>{
-                        return (<ListGroup.Item>{repo.name}</ListGroup.Item>)
+                        return (
+                            <ListGroup.Item>
+                                <Link to={repo.url} target="_blank">
+                                    {repo.name}
+                                </Link>
+                            </ListGroup.Item>
+                        )
                     })}                    
                 </ListGroup>
             </Col>
