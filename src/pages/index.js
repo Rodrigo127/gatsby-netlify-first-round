@@ -1,31 +1,41 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+import LayoutGitBlog from "../components/layout-git-blog"
+import CardProfile from "../components/section-profile"
+import RepositoriesSection from "../components/section-repositories"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link><br />
-      <Link to="/page-3/">Page 3</Link><br />
-      <Link to="/page-3/">Page 4</Link><br />
-    </p>
-  </Layout>
+import { graphql } from 'gatsby';
+
+const IndexPage = ({data}) => (
+  <LayoutGitBlog brand={data.q2.user.login}>
+    <SEO title="Home Page" />
+    <CardProfile profile={data.q2.user} />
+    <RepositoriesSection repositories={data.q2.user.repositories} />
+  </LayoutGitBlog>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+{ 
+  q2: github {
+    user(login: "Rodrigo127") {
+      name
+      url
+      avatarUrl(size: 300)
+      bio
+      company
+      twitterUsername
+      websiteUrl
+      login
+      location
+      repositories(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}
+`
