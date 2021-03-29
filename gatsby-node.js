@@ -17,3 +17,13 @@ exports.createPages = ({ actions, graphql }) => {
         }
     })
 }
+
+exports.createPages = ({ actions, graphql }) => {
+    actions.createPage({
+        path: `/`,
+        component: require.resolve("./src/templates/profile.js"),
+        context: {
+            login: `${process.env.GITHUB_LOGIN}`
+        }
+    })
+}
