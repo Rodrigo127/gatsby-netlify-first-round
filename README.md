@@ -10,7 +10,9 @@ This was built with:
    - GITHUB_PERSONAL_ACCESS_TOKEN=a00000b9cde22406f000000g3hi4jkl5m7n00000
      - It is a github's personal access token (check this [link](https://github.com/settings/tokens)).
    - GITHUB_REPOSITORY_EXAMPLE=gatsby-netlify-first-round
+     - The name of one of your repositories. 
    - GITHUB_REPOSITORY_EXAMPLE_BRANCH=master
+     - The name of the branch of the repository from the last key. 
 4. Run gatsby develop.
 
 ## Interesting links:
