@@ -8,16 +8,27 @@ body{
 
 div.image-column{
     text-align: right;
+    background-color: #FFF;
 }
 
-div.image-column img{
+div.image-column div{
+    height: 100%;
+}
+
+div.image-column div img{
     margin-top: 10px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    width: 100% !important;
 }
 
 div.profile-information{
     text-align: left;
     padding-top: 10px;
     padding-left: 40px;
+    background-color: #FFF;
+}
+
+div.profile-information div{
+    height: 100%;
 }

@@ -21,7 +21,7 @@ export const pageQuery = graphql`
     user(login: "Rodrigo127") {
       name
       url
-      avatarUrl(size: 180)
+      avatarUrl(size: 300)
       bio
       company
       twitterUsername
