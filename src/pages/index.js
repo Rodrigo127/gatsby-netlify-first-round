@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import LayoutGitBlog from "../components/layout-git-blog"
-import CardProfile from "../components/card-profile"
+import CardProfile from "../components/section-profile"
 import SEO from "../components/seo"
 
 import { graphql } from 'gatsby';

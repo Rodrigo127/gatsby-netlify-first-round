@@ -5,7 +5,7 @@ import { Row, Col, Image } from "react-bootstrap"
 const CardProfile = ({ profile }) => (
     <>
         <Row>
-            <Col sm={11} md={3} className="image-column">
+            <Col sm={11} md={3} className="image-column justify-content-sm-center">
                 <Image src={profile.avatarUrl} roundedCircle />
             </Col>
             <Col sm={11} md={6} className="profile-information">
