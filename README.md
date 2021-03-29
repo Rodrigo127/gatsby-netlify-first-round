@@ -27,3 +27,7 @@ This was built with:
 - Add more links.
 - Create commits' pages for every repository.
 - Pagination.
+
+## Common error while testing
+- The term 'gatsby' is not recognized as the name of a cmdlet, ...
+  - This can be solved by installing gatsby globally with: npm install -g gatsby
