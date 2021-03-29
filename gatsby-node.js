@@ -10,20 +10,19 @@ dotenv.config();
 
 exports.createPages = ({ actions, graphql }) => {
     actions.createPage({
-        path: `/page-4`,
-        component: require.resolve("./src/templates/repositories.js"),
-        context: {
-            login: `${process.env.GITHUB_LOGIN}`
-        }
-    })
-}
-
-exports.createPages = ({ actions, graphql }) => {
-    actions.createPage({
         path: `/`,
         component: require.resolve("./src/templates/profile.js"),
         context: {
             login: `${process.env.GITHUB_LOGIN}`
+        }
+    })
+    actions.createPage({
+        path: `/commits`,
+        component: require.resolve("./src/templates/commits.js"),
+        context: {
+            login: `${process.env.GITHUB_LOGIN}`,
+            repository: `${process.env.GITHUB_REPOSITORY_EXAMPLE}`,
+            branch: `${process.env.GITHUB_REPOSITORY_EXAMPLE_BRANCH}`
         }
     })
 }
