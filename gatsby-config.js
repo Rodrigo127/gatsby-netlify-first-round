@@ -50,5 +50,11 @@ module.exports = {
         fetchOptions: {},
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-54VH5QK',
+      }
+    },
   ],
 }
