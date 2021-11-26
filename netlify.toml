@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/commits-old"
-  to = "/commits"
-  status = 301
-  force = false
