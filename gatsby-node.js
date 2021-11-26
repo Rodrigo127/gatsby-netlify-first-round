@@ -32,4 +32,9 @@ exports.createPages = ({ actions, graphql }) => {
             login: `${process.env.GITHUB_LOGIN}`
         }
     })
+    actions.createRedirect({
+        fromPath: `/commits-old`,
+        toPath: `/commits`,
+        isPermanent: true
+    });
 }
