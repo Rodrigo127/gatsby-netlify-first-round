@@ -10,8 +10,8 @@ const fs = require('fs');
 dotenv.config();
 
 const redirectList = [
-    {fromPath: `/commits-old`, toPath: `/commits-old`, statusCode: `301`},
-    {fromPath: `/commits-old-2`, toPath: `/commits-old`, statusCode: `301`}
+    {fromPath: `/commits-old`, toPath: `/commits`, statusCode: `301`},
+    {fromPath: `/commits-old-2`, toPath: `/commits`, statusCode: `301`}
 ]
 
 const redirectsFile = "./static/_redirects";
