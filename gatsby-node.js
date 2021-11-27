@@ -6,17 +6,46 @@
 
 // You can delete this file if you're not using it
 const dotenv = require('dotenv');
+const fs = require('fs'); 
 dotenv.config();
 
+const redirectList = [
+    {fromPath: `/commits-old`, toPath: `/commits-old`, statusCode: `301`},
+    {fromPath: `/commits-old-2`, toPath: `/commits-old`, statusCode: `301`}
+]
+
+const redirectsFile = "./static/_redirects";
+
+function resetRedirectFile() {
+  fs.writeFile(redirectsFile, "", function (err) {
+    if (err) throw err
+    console.log("_redirects reseted!")
+  })
+}
+
+function createRedirectFile(content) {
+  resetRedirectFile();
+  redirectList.forEach(element => {
+    const redirect = `${element.fromPath}         ${element.toPath}              ${element.statusCode}\n`;
+    fs.appendFile(redirectsFile, redirect, function (err) {
+        if (err) throw err
+        console.log(`Redirect added: ${redirect}`)
+    });
+  });
+}
+
+createRedirectFile(redirectList);
+
 exports.createPages = ({ actions, graphql }) => {
-    actions.createPage({
+    const { createPage, createRedirect } = actions;
+    createPage({
         path: `/`,
         component: require.resolve("./src/templates/profile.js"),
         context: {
             login: `${process.env.GITHUB_LOGIN}`
         }
     })
-    actions.createPage({
+    createPage({
         path: `/commits`,
         component: require.resolve("./src/templates/commits.js"),
         context: {
@@ -25,7 +54,7 @@ exports.createPages = ({ actions, graphql }) => {
             branch: `${process.env.GITHUB_REPOSITORY_EXAMPLE_BRANCH}`
         }
     })
-    actions.createPage({
+    createPage({
         path: `/following`,
         component: require.resolve("./src/templates/following.js"),
         context: {
