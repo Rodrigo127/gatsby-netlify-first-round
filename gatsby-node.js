@@ -34,7 +34,7 @@ function createRedirectFile(content) {
   });
 }
 
-createRedirectFile(redirectList);
+//createRedirectFile(redirectList);
 
 exports.createPages = ({ actions, graphql }) => {
     const { createPage, createRedirect } = actions;
@@ -60,5 +60,10 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
             login: `${process.env.GITHUB_LOGIN}`
         }
+    })
+
+    createRedirect({
+      fromPath: `/commits-old-3`,
+      toPath: `/commits`,
     })
 }
